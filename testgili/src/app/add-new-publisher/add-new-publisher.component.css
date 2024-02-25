@@ -1,0 +1,27 @@
+.all{
+    height: 100%;
+    background: url(https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+.divForm{
+    width: 500px;
+    margin: 0 auto;
+   
+}
+.example-card{
+    background: rgba(255, 255, 255, 0.808);
+}
+.backBtn{
+    /* margin-left: 50px;
+    margin-top: 90px; */
+    width: 90px;
+     height: 40px;
+   
+  }
+  .addBorrowBtn{
+    margin-left: 350px;
+    margin-bottom: 20px;
+        background: brown;
+        width: 90px;
+         height: 40px;
+       
+      }

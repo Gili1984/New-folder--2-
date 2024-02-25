@@ -1,0 +1,39 @@
+/* 
+.all{
+    background: url(https://images.pexels.com/photos/396547/pexels-photo-396547.jpeg?auto=compress&cs=tinysrgb&w=600);
+} */
+.coteretHome{
+    color: brown;
+    margin-left: 700px;
+    font-size: 2.5em;
+
+  }
+  .details-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+.bookName{
+ 
+    font-size: 1.3em;
+    }
+    .center{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    
+    }
+    .bookName{
+        background-color: rgba(128, 128, 128, 0.63);
+    }
+    
+    .example-form-field{
+      margin-left: 70px;
+    }
+    .example-card {
+      width: 210px;
+      /* height: 250px; */
+    }
+    

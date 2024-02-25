@@ -1,0 +1,30 @@
+a {
+  color: black;
+  padding: 13px;
+  text-decoration: none; 
+  position: relative;
+  
+}
+.example-spacer {
+  flex: 1 1 auto;
+}
+.brown-toolbar {
+  background-color: brown;
+}
+/* Create a pseudo-element for the underline */
+a::after {
+  content: ''; /* Required for pseudo-elements */
+  position: absolute;
+  left: 50%; /* Position the pseudo-element in the middle */
+  bottom: 0;
+  width: 0; /* Initially, set the width to 0 */
+  height: 1px; /* Adjust the height of the underline */
+  background-color: black; /* Set the color of the underline */
+  transition: width 0.5s ease, left 0.5s ease; /* Add transition effect for width and left position */
+}
+
+/* Style the underline on hover */
+a:hover::after {
+  left: 0; /* Move the pseudo-element to the left edge */
+  width: 100%; /* Expand the width to 100% */
+}

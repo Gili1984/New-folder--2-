@@ -1,0 +1,21 @@
+
+<mat-form-field>
+  <mat-label>Publishers</mat-label>
+  <mat-select [(value)]="selctPublisher" (selectionChange)="filerByReqwest()">
+    <mat-option [value]="null">All</mat-option> <!-- Add this option -->
+    <mat-option *ngFor="let publisher of publishers" [value]="publisher">
+      {{ publisher.publishersName }}
+    </mat-option>
+  </mat-select>
+</mat-form-field>
+  <mat-form-field class="example-form-field"  style="width: 600px;">
+    <mat-label>Search by book name</mat-label>
+    <input matInput type="text" (input)="applyFilter()" [(ngModel)]="inputValue">
+    <button *ngIf="value" matSuffix mat-icon-button aria-label="Clear" (click)="clearInput()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+<!--   
+<button class="btn" mat-stroked-button (click)="openSnackBar()" aria-label="Show an example snack-bar">
+  Filter
+</button> -->

@@ -1,0 +1,50 @@
+<button mat-button class="addNewBookBtn" color="black" [routerLink]="['/addNewBookComponent']">
+  Add New Book
+</button>
+<form [formGroup]="searchForm">
+  <mat-form-field class="example-form-field">
+    <mat-label>Search Book</mat-label>
+    <input matInput formControlName="searchValue">
+    <button matSuffix mat-icon-button aria-label="Clear" *ngIf="searchForm.get('searchValue')?.value" (click)="clearSearch()">
+      <mat-icon>close</mat-icon>
+    </button>
+  </mat-form-field>
+</form>
+<table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+    
+    <ng-container matColumnDef="idBook">
+      <th mat-header-cell *matHeaderCellDef> idBook </th>
+      <td mat-cell *matCellDef="let books"> {{books.idBook}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="BookName">
+      <th mat-header-cell *matHeaderCellDef> BookName </th>
+      <td mat-cell *matCellDef="let books"> {{books.bookName}} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="Publisher">
+      <th mat-header-cell *matHeaderCellDef> Publisher </th>
+      <td mat-cell *matCellDef="let books"> {{books.idPublisher.publishersName }} </td>
+    </ng-container>
+    <ng-container matColumnDef="Amount">
+      <th mat-header-cell *matHeaderCellDef> Amount </th>
+      <td mat-cell *matCellDef="let books"> {{books.amount }} </td>
+    </ng-container>
+  
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef> category </th>
+      <td mat-cell *matCellDef="let books"> {{books.category }} </td>
+    </ng-container>
+    <ng-container matColumnDef="details">
+      <th mat-header-cell *matHeaderCellDef> details </th>
+      <td mat-cell *matCellDef="let book"> 
+        <button mat-button class="addNewBookBtn" color="black" [routerLink]="['/bookDetails', book.idBook]">
+          bookDetails
+        </button>
+      </td>
+    </ng-container>
+      
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table> 
+

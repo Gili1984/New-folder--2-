@@ -1,0 +1,46 @@
+
+
+<!-- <div class="all">
+  <div class="divFilter">
+  <ng-container *ngIf="isSearchAppProvided && books.length > 0">
+      <app-search [books]="books" (filteredBooksChange)="handleFilteredBooksChange($event)"></app-search>
+    </ng-container>
+</div>
+<mat-grid-list cols="15" >
+  <mat-grid-tile *ngFor="let book of filteredBooks; let i = index" [colspan]="3" [rowspan]="3">
+    <mat-card class="example-card">
+      <mat-card-header class="bookName center">
+        <mat-card-title>{{book.bookName}}</mat-card-title>
+        <mat-icon class="star-icon" *ngIf="isTopBorrowing(book)||starIcon">star</mat-icon>
+      </mat-card-header>
+
+      <img mat-card-image [src]="book.img" alt="Photo of a Shiba Inu"  height="140">
+      <mat-card-content class="center">
+        <p>{{book.idPublisher.publishersName}} - {{book.category}}</p>
+        <mat-icon class="delete-icon" (click)="openDeleteDialog(book)">delete</mat-icon>
+      </mat-card-content>
+      <mat-card-content class="center">
+        <p>Amount available: {{book.amountInLibrary}}</p>
+        
+      </mat-card-content>
+      <button mat-button (click)="editAmount(book)">Edit Amount</button>
+      <button mat-button (click)="openDialog(book)">For More Details</button>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+</div> -->
+
+<div class="all">
+  <div class="divFilter">
+  <ng-container *ngIf="isSearchAppProvided && books.length > 0">
+      <app-search [books]="books" (filteredBooksChange)="handleFilteredBooksChange($event)"></app-search>
+    </ng-container>
+</div>
+<mat-grid-list cols="15" >
+  <mat-grid-tile *ngFor="let book of filteredBooks; let i = index" [colspan]="3" [rowspan]="3">
+    <app-one-book-card [book]="book" ></app-one-book-card>
+  </mat-grid-tile>
+</mat-grid-list>
+
+</div>

@@ -1,0 +1,65 @@
+.divTable{
+    width: 1200px;
+
+    margin: 0 auto;
+    margin-top: 50px;
+}
+
+.all{
+    height: 100%;
+    background: url(https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+.newPageBtn{
+    height: 50px;
+    margin-left: 260px;
+    margin-top: 30px;
+    width: 300px;
+    background: brown;
+    color: black;
+  }
+  .newOpenBtn{
+    height: 50px;
+    margin-left: 90px;
+    margin-top: 30px;
+    width: 300px;
+    background: brown;
+    color: black;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  table {
+    width: 100%;
+  }
+  
+  .mat-mdc-form-field {
+    font-size: 14px;
+    width: 100%;
+  }
+  
+  td, th {
+    width: 15%;
+    font-family: "Protest Riot", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+  th{
+    color: brown;
+    text-decoration: underline;
+  }
+  .backBtn{
+    /* margin-left: 50px;
+    margin-top: 90px; */
+    width: 90px;
+     height: 40px;
+     background: rgba(255, 255, 255, 0.753);
+   margin-bottom: 40px;
+  }
+  .divBtn{
+    display: flex;
+  }

@@ -1,0 +1,30 @@
+<!-- 
+<mat-dialog-content >
+    <h3>The Reader: {{ data.reader.readerName  }}</h3>
+    <p>Are you sure you want to  <strong>DELETE</strong>{{ data.reader.readerName  }}?</p>
+  
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>NO</button>
+   
+    <button mat-button mat-dialog-close [mat-dialog-close]="true" color="black" style="background-color: brown;"  (click)="delete(data.reader.idReader)">
+      YES
+    </button>
+  </mat-dialog-actions>
+ 
+   -->
+   <mat-dialog-content >
+    <h3 *ngIf="data.objectType === 'Reader'">The Reader: {{ data.reader.readerName }}</h3>
+    <h3 *ngIf="data.objectType === 'Publisher'">The Publisher: {{ data.publisher.publishersName }}</h3>
+    <!-- Display additional fields based on the object type -->
+    <!-- For example, for Reader -->
+    <p *ngIf="data.objectType === 'Reader'">Are you sure you want to <strong>DELETE</strong> {{ data.reader.readerName }}?</p>
+    <!-- For example, for Publisher -->
+    <p *ngIf="data.objectType === 'Publisher'">Are you sure you want to  <strong>DELETE</strong>{{ data.publisher.publishersName }}?</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+    <button mat-button mat-dialog-close>NO</button>
+    <button mat-button mat-dialog-close [mat-dialog-close]="true" color="black" style="background-color: brown;"  (click)="confirmDelete()">
+      YES
+  </button>
+</mat-dialog-actions>

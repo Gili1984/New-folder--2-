@@ -1,0 +1,33 @@
+<div class="all">
+<button mat-button   class="backBtn" type="button" (click)="goBack()"><mat-icon aria-hidden="false" aria-label="Back icon" fontSet="material-icons" style="font-size: 24px; vertical-align: middle;">arrow_back</mat-icon></button>
+<div class="divForm">
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Add New Publisher</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+        <p>
+            <mat-form-field appearance="outline">
+              <mat-label>ID:</mat-label>
+              <input matInput type="number" required="true" [(ngModel)]="newPublisher.idPublishers"  (blur)="checkIfIdExists()" >
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Name:</mat-label>
+              <input matInput type="String" required="true"[(ngModel)]="newPublisher.publishersName">
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Location:</mat-label>
+              <input matInput type="String" [(ngModel)]="newPublisher.location">
+              </mat-form-field>
+          </p>
+    </mat-card-content>
+    <button mat-button class="addBorrowBtn" (click)="addPublisher()"  >Add</button>
+   
+
+  </mat-card>
+</div>
+</div>

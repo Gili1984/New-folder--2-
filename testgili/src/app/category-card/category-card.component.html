@@ -1,0 +1,17 @@
+
+<mat-grid-list cols="15">
+    <mat-grid-tile *ngFor="let category of categorys; let i = index" [colspan]="2" [rowspan]="2">
+      <a [routerLink]="['/boooksAcordingToCategory', category ]">
+        <mat-card class="example-card">
+          <mat-card-header class="bookName center">
+            <mat-card-title>{{ category }}</mat-card-title>
+          </mat-card-header>
+          <img mat-card-image [src]="src[i % src.length]" alt="Photo of a Shiba Inu" width="250" height="140">
+        </mat-card>
+      </a>
+    </mat-grid-tile>
+  </mat-grid-list>
+  
+  <button mat-raised-button class="newPageBtn" style="background: brown;" [routerLink]="['/booksView']">
+    <h2>For All The Books</h2>
+  </button>

@@ -1,0 +1,58 @@
+<button mat-button class="addNewBookBtn" color="black" [routerLink]="['/addNewBookComponent']">
+  Add New Book
+</button>
+
+<mat-grid-list cols="9"  rowHeight="400px" class="list" style="min-height: 100vh;">
+    @for (book of books; track book) {
+      <mat-grid-tile
+      [colspan]="panelOpenState ? 2:2"
+      [rowspan]="panelOpenState ?1 : 1">
+        <mat-accordion >
+            <mat-expansion-panel hideToggle>
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                 {{ book.bookName}}
+                </mat-panel-title>
+                <mat-panel-description>
+                    {{ book.idPublisher.publishersName}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <p>This is the primary content of the panel.</p>
+            </mat-expansion-panel>
+            <mat-expansion-panel (opened)="panelOpenState = true"
+                                 (closed)="panelOpenState = false">
+              <mat-expansion-panel-header>
+                <mat-panel-title>
+                  more details
+                </mat-panel-title>
+                <mat-panel-description>
+                  Currently I am {{panelOpenState ? 'open' : 'closed'}}
+                </mat-panel-description>
+              </mat-expansion-panel-header>
+              <mat-card class="example-card">
+                <mat-card-header>
+                  <div mat-card-avatar class="example-header-image"></div>
+            
+                  <mat-card-title>Book Number:{{book.idBook}} category: {{book.category}}</mat-card-title>
+                  <!-- <mat-card-subtitle>{{book.category}}</mat-card-subtitle> -->
+                </mat-card-header>
+                <img mat-card-image src={{book.img}} alt="Photo of a Shiba Inu" width="200">
+                <mat-card-content>
+                  <p>
+                   
+                  </p>
+                </mat-card-content>
+                <mat-card-content>
+                  <p>
+                    Amount:{{book.amount}}
+                  
+                    Amount available:{{book.amountInLibrary}}
+                  </p>
+            
+                </mat-card-content>
+              </mat-card>
+            </mat-expansion-panel>
+          </mat-accordion>
+    </mat-grid-tile>
+    }
+  </mat-grid-list>

@@ -1,0 +1,54 @@
+
+
+<h2 mat-dialog-title><h2>Borrowing List Of: {{ data1.reader.readerName }}</h2>
+<mat-dialog-content>
+    <div class="example-container mat-elevation-z8">
+      
+        <div class="example-table-container">
+      
+          <table mat-table [dataSource]="data" class="example-table"
+                 matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+            <!-- Number Column -->
+            <ng-container matColumnDef="idBorrowing">
+              <th mat-header-cell *matHeaderCellDef>idBorrowing</th>
+              <td mat-cell *matCellDef="let row">{{row.idBorrowing}}</td>
+            </ng-container>
+      
+            <!-- Title Column -->
+            <ng-container matColumnDef="bookName">
+              <th mat-header-cell *matHeaderCellDef>bookName</th>
+              <td mat-cell *matCellDef="let row">{{row.idBook.bookName}}</td>
+            </ng-container>
+      
+            <!-- State Column -->
+            <ng-container matColumnDef="dateBorrowing">
+              <th mat-header-cell *matHeaderCellDef>dateBorrowing</th>
+              <td mat-cell *matCellDef="let row">{{formatDate(row.dateBorrowing)}}</td>
+            </ng-container>
+      
+            <!-- Created Column -->
+            <ng-container matColumnDef="dateReturn">
+              <th mat-header-cell *matHeaderCellDef> DATE RETURN </th>
+              <td mat-cell *matCellDef="let row">
+                <ng-container *ngIf="row.dateReturn; else inputField">
+                  {{formatDate(row.dateReturn | date:'short')}}
+                </ng-container>
+                <ng-template #inputField>
+                  <button mat-button (click)="openDialog(row)" color="black" style="background-color: brown;" >RETURN</button>
+                 
+                </ng-template>
+              </td>
+            </ng-container>
+      
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      
+        <mat-paginator [length]="resultsLength" [pageSize]="30" aria-label="Select page of GitHub search results"></mat-paginator>
+      </div>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+
+</mat-dialog-actions>

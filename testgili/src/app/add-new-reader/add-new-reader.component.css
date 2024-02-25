@@ -1,0 +1,46 @@
+.example-card {
+    max-width: 700px;
+    height: 700px;
+    border: 1px solid black;
+    margin: 0 auto;
+    margin-top: 50px;
+  }
+  mat-form-field{
+    
+    width: 50%;
+    margin-left: 150px;
+  }
+  mat-card-title{
+    font-size: 2.2em;
+    margin-left: 150px;
+    margin-bottom: 20px;
+    color: brown;
+
+  }
+  .all{
+    height: 100%;
+    background: url(https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?auto=compress&cs=tinysrgb&w=600);
+}
+.divForm{
+    width: 600px;
+    margin: 0 auto;
+   
+}
+.example-card{
+    background: rgba(255, 255, 255, 0.808);
+}
+.backBtn{
+  /* margin-left: 50px;
+  margin-top: 90px; */
+  width: 90px;
+   height: 40px;
+ 
+}
+.addBorrowBtn{
+  margin-left: 250px;
+ margin-top: 20px;
+      background: brown;
+      width: 90px;
+       height: 40px;
+     
+    }

@@ -1,0 +1,93 @@
+<div class="all">
+<button mat-button  class="backBtn" type="button" (click)="goBack()"><mat-icon aria-hidden="false" aria-label="Back icon" fontSet="material-icons" style="font-size: 24px; vertical-align: middle;">arrow_back</mat-icon></button>
+<div class="divForm">
+<mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>Add New Book</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <div class="allDivs">
+    <div class="div">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Name:</mat-label>
+              <input matInput type="String" required="true"[(ngModel)]="newBook.bookName" [disabled]="quantityError">
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <mat-form-field>
+              <mat-label>Book Category</mat-label>
+              <mat-select [(value)]="newBook.category">
+                <mat-option *ngFor="let category of categories" [value]="category" required="true" [disabled]="quantityError">
+                  {{ category }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <mat-form-field>
+              <mat-label>Publishers</mat-label>
+              <mat-select [(value)]="newBook.idPublisher">
+                <mat-option *ngFor="let publisher of publishers" [value]="publisher" required="true" [disabled]="quantityError">
+                  {{ publisher.publishersName }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>publicationDate:</mat-label>
+              <input matInput [matDatepicker]="picker" [(ngModel)]="newBook.publicationDate" required="true" [disabled]="quantityError" max="{{ today | date: 'yyyy-MM-dd' }}">
+              <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+              <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+          </p>
+          
+        </div>
+        <div class="div">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>amount:</mat-label>
+              <input matInput type="number" [(ngModel)]="newBook.amount" required="true" (input)="validateQuantity()">
+            </mat-form-field>
+            <mat-error *ngIf="quantityError">{{ quantityErrorMessage }}</mat-error>
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>img:</mat-label>
+              <input matInput type="String" [(ngModel)]="newBook.img" required="true" [disabled]="quantityError">
+              </mat-form-field>
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Price:</mat-label>
+              <input matInput type="number" required="true"[(ngModel)]="newBook.price" [disabled]="quantityError">
+            </mat-form-field>
+          </p>
+        </div>
+        <div class="div">
+          <p>
+            <mat-form-field appearance="outline">
+              <mat-label>Description:</mat-label>
+              <textarea matInput [(ngModel)]="newBook.description" required="true" [disabled]="quantityError" rows="5"></textarea>
+            </mat-form-field>
+          </p>
+        </div>
+      </div>
+    </mat-card-content>
+    <button mat-button color="black" style="background-color: brown; width: 50px; margin-left: 290px;" (click)="addBook()"  >Add</button>
+   
+
+  </mat-card>
+</div>
+</div>

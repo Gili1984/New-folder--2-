@@ -1,0 +1,51 @@
+<!-- <button mat-button  color="black" style="margin-left: 50px; margin-top: 90px; width: 25px; height: 25px; background-color: brown;" type="button" (click)="goBack()"><mat-icon aria-hidden="false" aria-label="Back icon" fontSet="material-icons" style="font-size: 24px; vertical-align: middle;">arrow_back</mat-icon></button>
+<mat-card *ngIf="book" class="example-card">
+    <div class="details-container">
+        <div class="left">
+    <mat-card-header>
+      
+      <mat-card-title style="color: brown; font-size: 5em;">{{book.bookName}}</mat-card-title>
+
+      <mat-card-title class="idBook" style="color: brown; font-size: 1.5em;">Book Number:{{book.idBook}}</mat-card-title>
+      <mat-card-subtitle class="cat" style="color: brown; font-size: 1.5em;">category:{{book.category}}</mat-card-subtitle>
+   
+    </mat-card-header>
+</div>
+   <div class="right"> <img mat-card-image src={{book.img}} alt="Photo of the book" width="700"></div></div>
+    <mat-card-content>
+   
+      <p>
+        publisher: {{book.idPublisher.publishersName}}
+      </p>
+    </mat-card-content>
+    <mat-card-content>
+      <p>
+        Amount:{{book.amount}}
+        <br>
+        Amount available:{{book.amountInLibrary}}
+      </p>
+
+    </mat-card-content>
+  </mat-card> -->
+
+  <h2 mat-dialog-title><h2>{{ data.book.bookName }}</h2>
+  <mat-dialog-content>
+    <h3>idBook: {{ data.book.idBook }}</h3>
+
+    <h3>publisher:{{ data.book.idPublisher.publishersName }}, location: {{ data.book.idPublisher.location }}</h3> 
+   <h4> amount:{{ data.book.amount }},
+    Available quantity : {{ data.book.amountInLibrary }}</h4>
+    <p>Publication date: {{ formatDate(data.book.publicationDate )}}</p>
+    <br>
+    <p>Price: {{ data.book.price }}</p>
+    <br>
+<p>description: {{ data.book.description }}</p>
+  </mat-dialog-content>
+  <mat-dialog-actions>
+    <button mat-button mat-dialog-close>Close</button>
+   
+    <button mat-button mat-dialog-close color="black" style="background-color: brown;" [routerLink]="['/byIdBook', data.book.idBook]">
+      Borrowing
+    </button>
+  </mat-dialog-actions>
+  

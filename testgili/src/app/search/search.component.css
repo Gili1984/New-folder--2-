@@ -1,0 +1,16 @@
+mat-form-field {
+    margin-right: 12px;
+  }
+  .btn{background: brown;}
+
+  ::ng-deep .custom-snackbar {
+    width: 400px; /* Adjust width as needed */
+    height: 200px; /* Adjust height as needed */
+    margin: 0 auto; /* Center horizontally */
+    top: 50%; /* Center vertically */
+    transform: translateY(-50%);
+    background: rgb(146, 223, 162);
+  }
+  input{
+    width: 500px;
+  }

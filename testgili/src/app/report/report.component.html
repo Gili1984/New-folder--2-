@@ -1,0 +1,43 @@
+
+
+<h2 mat-dialog-title><h2>Books List Of: {{ data.publisher.publishersName }}</h2>
+
+<mat-dialog-content>
+    <div class="example-container mat-elevation-z8">
+      
+        <div class="example-table-container">
+      
+          <table mat-table [dataSource]="booksPerPublisher" class="example-table"
+                 matSort matSortActive="created" matSortDisableClear matSortDirection="desc">
+
+            <ng-container matColumnDef="idBook">
+              <th mat-header-cell *matHeaderCellDef>ID</th>
+              <td mat-cell *matCellDef="let row">{{row.idBook}}</td>
+            </ng-container>
+      
+            <ng-container matColumnDef="bookName">
+              <th mat-header-cell *matHeaderCellDef> Name</th>
+              <td mat-cell *matCellDef="let row">{{row.bookName}}</td>
+            </ng-container>
+            <ng-container matColumnDef="amount">
+              <th mat-header-cell *matHeaderCellDef> Amount</th>
+              <td mat-cell *matCellDef="let row">{{row.amount}}</td>
+            </ng-container>
+       
+              <ng-container matColumnDef="price">
+                <th mat-header-cell *matHeaderCellDef>price</th>
+                <td mat-cell *matCellDef="let row">{{row.price}}</td>
+              </ng-container>
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+          </table>
+        </div>
+      
+        <mat-paginator [length]="resultsLength" [pageSize]="30" aria-label="Select page of GitHub search results"></mat-paginator>
+      </div>
+      <p><strong>Total Price: </strong>{{ getTotalPrice() }}</p>
+</mat-dialog-content>
+<mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+
+</mat-dialog-actions>
